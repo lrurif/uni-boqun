@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+    "jin-icon": "/components/jin-edit/jin-icons"
+  }
+}

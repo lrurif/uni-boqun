@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.content.data-v-80842834 {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1295522779,4078280171&fm=26&gp=0.jpg") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+.content .mask.data-v-80842834 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.content .user_info.data-v-80842834 {
+  width: 90%;
+  height: 320rpx;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  color: #FFFFFF;
+  z-index: 1;
+}
+.content .user_info .avatar.data-v-80842834 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.content .user_info .user_status.data-v-80842834 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.content .user_info .user_status .user_data.data-v-80842834 {
+  width: 30%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 24rpx;
+}
+.content .user_info .user_status .user_data .kpi.data-v-80842834 {
+  text-align: center;
+}
+.content .user_info .user_status .focus-author.data-v-80842834 {
+  padding: 10rpx 20rpx;
+  border: 1px solid #42c02e;
+  color: #42c02e;
+  border-radius: 5rpx;
+  float: right;
+}
+.content .user_info .user_status .isFocus.data-v-80842834 {
+  background-color: #42c02e;
+  color: #fff;
+}
+.content .article.data-v-80842834 {
+  z-index: 1;
+  width: 100%;
+  height: 75%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-top-right-radius: 1.5vh;
+  border-top-left-radius: 1.5vh;
+  background-color: #FFFFFF;
+}
+.content .article .article-tab.data-v-80842834 {
+  height: 80rpx;
+  font-size: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  color: #2979ff;
+}
+.content .article .article-tab text.data-v-80842834 {
+  margin-left: 80rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: inline-block;
+  position: relative;
+}
+.content .article .article-tab text.data-v-80842834::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 75%;
+  height: 6rpx;
+  background-color: #2979ff;
+}
+

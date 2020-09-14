@@ -1,0 +1,117 @@
+{
+	"easycom": { "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" },
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "主页",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50		
+			}
+		},
+		{
+		    "path" : "pages/zhuanlan/zhuanlan",
+		    "style" : {
+				"navigationBarTitleText": "专栏",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50
+			}
+		},
+		{
+		    "path" : "pages/subscribe/subscribe",
+		    "style" : {
+				"navigationBarTitleText": "订阅"
+			}
+		}
+        ,{
+            "path" : "pages/my/my",
+            "style" : {
+				"navigationBarTitleText": "我的"
+			}
+        },
+		{
+		    "path" : "pages/user/user",
+		    "style" : {
+				"navigationBarTitleText": "用户详情"
+			}
+		},
+		{
+			"path": "pages/article_detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/add_article/add",
+			"style": {
+				"navigationBarTitleText": "写文章"
+			}
+		},
+		{
+			"path": "pages/preview/preview",
+			"style": {
+				"navigationBarTitleText": "预览"
+			}
+		},
+		{
+			"path": "pages/zhuanlan_detail/zhuanlan_detail",
+			"style": {
+				"navigationBarTitleText": "专栏详情",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50
+			}
+		},
+		{
+			"path": "pages/history/history",
+			"style": {
+				"navigationBarTitleText": "浏览历史",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50
+			}
+		}
+    ],
+	"tabBar": {
+		"color": "#ddd",
+		"selectedColor": "#2F85FC",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+			"pagePath": "pages/home/home",
+			"iconPath": "static/images/home.png",
+			"selectedIconPath": "static/images/home_active.png",
+			"text": "首页"
+		}, {
+			"color": "#ddd",
+			"pagePath": "pages/zhuanlan/zhuanlan",
+			"iconPath": "static/images/zhuanlan.png",
+			"selectedIconPath": "static/images/zhuanlan_active.png",
+			"text": "专题"
+		}, {
+			"color": "#ddd",
+			"pagePath": "pages/subscribe/subscribe",
+			"iconPath": "static/images/subscribe.png",
+			"selectedIconPath": "static/images/subscribe_active.png",
+			"text": "关注"
+		}, {
+			"color": "#ddd",
+			"pagePath": "pages/my/my",
+			"iconPath": "static/images/my.png",
+			"selectedIconPath": "static/images/my_active.png",
+			"text": "我的"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

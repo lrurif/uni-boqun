@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "用户详情",
+  "usingComponents": {
+    "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar",
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
+    "article-list": "/components/articleList"
+  }
+}

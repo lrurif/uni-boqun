@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.content.data-v-8509cd44 {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.content .zhuanlan-detail-header.data-v-8509cd44 {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.content .zhuanlan-detail-header .zhuanlan-information.data-v-8509cd44 {
+  padding: 30rpx 30rpx 50rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-information-header .avatar.data-v-8509cd44 {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 25rpx;
+  vertical-align: middle;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-information-header .title.data-v-8509cd44 {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 50rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-information-header .title .zhuanlan-name.data-v-8509cd44 {
+  font-size: 44rpx;
+  color: #333;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-information-header .title .zhuanlan-article-num.data-v-8509cd44 {
+  margin-top: 7rpx;
+  font-size: 30rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-abstract.data-v-8509cd44 {
+  margin: 30rpx 0;
+  font-size: 34rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-btn.data-v-8509cd44 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-btn .zhuanlan-focus.data-v-8509cd44 {
+  background-color: #4CD964;
+  color: #fff;
+  width: 48%;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-btn .zhuanlan-focus .iconfont.data-v-8509cd44 {
+  margin-right: 10rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-btn .zhuanlan-focus .split.data-v-8509cd44 {
+  margin: 0 10rpx;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-btn .isFocus.data-v-8509cd44 {
+  border: 1rpx solid #ddd;
+  color: #8a8a8a;
+  background-color: #fff;
+}
+.content .zhuanlan-detail-header .zhuanlan-information .zhuanlan-btn .zhuanlan-publish.data-v-8509cd44 {
+  border: 1rpx solid #4CD964;
+  color: #4CD964;
+  width: 48%;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+}
+.content .popup.data-v-8509cd44 {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.content .popup .mask.data-v-8509cd44 {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.content .popup .popup-content.data-v-8509cd44 {
+  width: 95%;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  border-radius: 20rpx;
+  background: #fff;
+}
+.content .popup .popup-content .content-header.data-v-8509cd44 {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 28rpx 0;
+}
+.content .popup .popup-content .content-header .header-title.data-v-8509cd44 {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.content .popup .popup-content .contribution-content.data-v-8509cd44 {
+  padding: 40rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.content .popup .popup-content .contribution-content .search-article.data-v-8509cd44 {
+  border: 1px solid #ddd;
+  padding: 12rpx 14rpx;
+  height: 76rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.content .popup .popup-content .contribution-content .hasChosen.data-v-8509cd44 {
+  height: 76rpx;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background-color: #f6f6f6;
+  padding: 12rpx 14rpx;
+  line-height: 52rpx;
+  color: #1a1a1a;
+  border-radius: 6rpx;
+}
+.content .popup .popup-content .contribution-content .hasChosen .cancelChosen.data-v-8509cd44 {
+  float: right;
+}
+.content .popup .popup-content .contribution-content .hasChosen .chose-title.data-v-8509cd44 {
+  width: 90%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content .popup .popup-content .contribution-content .contribution-list-wrapper.data-v-8509cd44 {
+  padding: 0 40rpx;
+  position: relative;
+}
+.content .popup .popup-content .contribution-content .contribution-list-wrapper .contribution-list.data-v-8509cd44 {
+  position: absolute;
+  left: 0rpx;
+  top: 10rpx;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0px 0px 10rpx rgba(0, 0, 0, 0.2);
+  border-radius: 12rpx;
+}
+.content .popup .popup-content .contribution-content .contribution-list-wrapper .contribution-list .contribution-item.data-v-8509cd44 {
+  padding: 20rpx;
+}
+.content .popup .popup-content .contribution-content .contribution-list-wrapper .contribution-list .contribution-item.data-v-8509cd44:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.content .popup .popup-content .content-btn.data-v-8509cd44 {
+  text-align: right;
+  padding: 40rpx;
+  border-top: 1px solid #ddd;
+}
+.content .popup .popup-content .content-btn view.data-v-8509cd44 {
+  display: inline-block;
+  padding: 15rpx 30rpx;
+  color: #515a6e;
+  border-radius: 8rpx;
+}
+.content .popup .popup-content .content-btn .cancel.data-v-8509cd44 {
+  background-color: transparent;
+}
+.content .popup .popup-content .content-btn .confirm.data-v-8509cd44 {
+  background-color: #2d8cf0;
+  border: 1px solid #2d8cf0;
+  color: #fff;
+  margin-left: 16rpx;
+}
+

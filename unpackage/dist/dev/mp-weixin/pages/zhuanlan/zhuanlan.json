@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "专栏",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon"
+  }
+}

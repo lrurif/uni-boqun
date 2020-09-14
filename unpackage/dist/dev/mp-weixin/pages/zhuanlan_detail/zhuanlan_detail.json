@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "专栏详情",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+    "article-list": "/components/articleList"
+  }
+}

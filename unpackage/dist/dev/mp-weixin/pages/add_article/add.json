@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "写文章",
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+    "jin-edit": "/components/jin-edit/jin-edit"
+  }
+}

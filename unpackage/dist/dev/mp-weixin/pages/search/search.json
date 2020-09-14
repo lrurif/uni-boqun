@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "搜索",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "article-list": "/components/articleList"
+  }
+}
