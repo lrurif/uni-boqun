@@ -15,6 +15,7 @@
 		<view v-show="!isSearch">
 			<u-tabs name="cate_name" :show-bar="false" :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
 			<view style="background-color: #fff;" v-show="current === 0">
+				<article-list :articleList="articleList"></article-list>
 			</view>
 			<view v-show="current === 1" class="user-list">
 				<view v-for="(item, index) in userList" :key="index" class="user-item">

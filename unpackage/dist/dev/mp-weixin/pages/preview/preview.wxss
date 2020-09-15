@@ -26,6 +26,7 @@
 /* 文章场景相关 */
 .article_preview {
   padding: 30rpx 15rpx;
+  padding-bottom: 100rpx;
 }
 .article_preview .article_title {
   font-size: 50rpx;

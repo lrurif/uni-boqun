@@ -6,6 +6,7 @@
 				<img class="author-avatar" :src="author_avatar">
 				<text class="author-name">{{author_name}}</text>
 			</view>
+			<view style="height: 20rpx;background-color: #f7f5f5;margin-bottom: 20rpx;width: 100vw;margin-left: -15rpx;"></view>
 			<rich-text class="show-html" :nodes="write_content"></rich-text>
 			
 		</view>
@@ -23,6 +24,7 @@
 			this.write_cover = uni.getStorageSync("write-cover")
 			this.author_name = uni.getStorageSync("userName");
 			this.author_avatar = uni.getStorageSync("avatarUrl");
+			this.write_content = this.write_content.replace(/\<img/gi, '<img style="width:100%;height:auto" ');
 		},
 		data() {
 			return {
@@ -71,6 +73,7 @@
 <style lang="scss">
 	.article_preview {
 		padding: 30rpx 15rpx;
+		padding-bottom: 100rpx;
 		.article_title {
 			font-size: 50rpx;
 			font-weight: 600;

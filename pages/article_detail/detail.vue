@@ -7,21 +7,22 @@
 					<img class="author-avatar" :src="article_detail.avatar">
 					<text class="author-name">{{article_detail.realName}}</text>
 				</navigator>
-				<text v-if="userId!==article_detail.user_id" @click="focus_person" class="focus-author" :class="{'isFocus': article_detail.isFocus}">{{article_detail.isFocus?"已关注":"关注"}}</text>
+				<text v-if="userId!==article_detail.user_id" @tap="focus_person" class="focus-author" :class="{'isFocus': article_detail.isFocus}">{{article_detail.isFocus?"已关注":"关注"}}</text>
 			</view>
 			<view class="article-info">
 				<text class="article-time">{{article_detail.article_time}}</text>
 				<text class="middle-code">·</text>
 				<text class="article-read-num">阅读:{{article_detail.article_reading}}</text>
 			</view>
+			<view style="height: 20rpx;background-color: #f7f5f5;margin-bottom: 20rpx;width: 100vw;margin-left: -15rpx;"></view>
 			 <rich-text class="show-html" :nodes="article_detail.article_content"></rich-text>
 			 <u-popup v-model="pop_show" mode="top">
 				 <view class="pop-content">
 					<textarea v-model="comment_value" :placeholder="placeholder" class="comment-input" :focus="true">
 					</textarea>
 					<view class="comment-btn">
-						<button class="cancel" @click="pop_show = false;">取消</button>
-						<button class="confirm" type="primary" @click="add_comment">确认</button>
+						<button class="cancel" @tap="pop_show = false;">取消</button>
+						<button class="confirm" type="primary" @tap="add_comment">确认</button>
 					</view>
 				 </view>
 			 </u-popup>
@@ -36,8 +37,8 @@
 						</view>
 					</navigator>
 					<view class="sender-right">
-						<text @click="reply_comment(index)" class="iconfont icon-send-message"></text>
-						<text @click="thumpUp(index)" class="iconfont icon-zan" :class="{'isZan': item.isThumbUp}"></text>
+						<text @tap="reply_comment(index)" class="iconfont icon-send-message"></text>
+						<text @tap="thumpUp(index)" class="iconfont icon-zan" :class="{'isZan': item.isThumbUp}"></text>
 						<text :class="{'isZan': item.isThumbUp}">{{item.thumbUpNum}}</text>
 					</view>
 				</view>
@@ -56,8 +57,8 @@
 								<text class="receive-name">{{child_item.receiver.realName}}</text>
 							</view>
 							<view class="sender-right-child">
-								<text @click="reply_comment_child(index, child_index)" class="iconfont icon-send-message"></text>
-								<text @click="thumpUp(index, child_index)" class="iconfont icon-zan" :class="{'isZan': child_item.isThumbUp}"></text>
+								<text @tap="reply_comment_child(index, child_index)" class="iconfont icon-send-message"></text>
+								<text @tap="thumpUp(index, child_index)" class="iconfont icon-zan" :class="{'isZan': child_item.isThumbUp}"></text>
 								<text :class="{'isZan': child_item.isThumbUp}">{{child_item.thumbUpNum}}</text>
 							</view>
 						</view>
@@ -69,15 +70,15 @@
 			</view>
 		</view>
 		<view class="bottom-view">
-			<view class="show-popup" @click="change_pop">
+			<view class="show-popup" @tap="change_pop">
 				快来发表评论吧...
 			</view>
 			<view  class="operate-btn">
-				 <text class="zan-btn" @click="zan">
+				 <text class="zan-btn" @tap="zan">
 					 <text class="iconfont icon-zan" :class="{'isLike':article_detail.isLike}"></text>
 					 <text class="num">{{article_detail.zanNum}}</text>
 				 </text>
-				 <text @click="collect">
+				 <text @tap="collect">
 					 <text class="iconfont icon-collect" :class="{'isCollect': article_detail.isCollect}"></text>
 					 <text class="num">{{article_detail.collectionNum}}</text>
 				 </text>
@@ -115,7 +116,7 @@
 			arr.push(
 				getComments({
 					article_id: option.articleId,
-					user_id: this.userId >=0?this.userId: -1
+					user_id: this.userId || -1
 				})
 			);
 			if(this.userId) {
@@ -128,6 +129,7 @@
 			}
 			Promise.all(arr).then(res=> {
 				this.article_detail = res[0].data[0];
+				this.article_detail.article_content = this.article_detail.article_content.replace(/\<img/gi, '<img style="width:100%;height:auto" ');
 				this.article_detail.article_reading = +this.article_detail.article_reading;
 				this.article_detail.article_reading++;
 				uni.hideLoading();
@@ -260,6 +262,7 @@
 						this.comments_arr.unshift({
 							comments_id: res.data.insertId,
 							comment_content: this.comment_value,
+							thumbUpNum: 0,
 							sender: {
 							  avatar: this.avatar,
 							  realName: this.realName,
@@ -289,6 +292,7 @@
 							comment_time: "刚刚",
 							comments_id: res.data.insertId,
 							receive_person_id: this.receive_id,
+							thumbUpNum: 0,
 							sender: {
 							  avatar: this.avatar,
 							  realName: this.realName,
@@ -309,6 +313,7 @@
 			},
 			change_pop() {
 				if(!isLogin()) return;
+				this.placeholder = "";
 				this.receive_id = "";
 				this.pop_show = true;
 				this.comment_value = "";
@@ -539,7 +544,7 @@
 								margin-right: 30rpx;
 							}
 							.isZan {
-								color: #ec7259;
+								color: #e33e33;
 							}
 						}
 					}

@@ -190,7 +190,7 @@
   margin-right: 30rpx;
 }
 .comments-area .comment .comments-children .comment-child .sender-child .sender-right-child .isZan.data-v-4025a69d {
-  color: #ec7259;
+  color: #e33e33;
 }
 .comments-area .comment .comments-children .comment-child .comment-content-child.data-v-4025a69d {
   margin-left: 70rpx;

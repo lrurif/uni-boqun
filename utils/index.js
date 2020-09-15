@@ -1,5 +1,5 @@
 
-let baseUrl = "http://127.0.0.1:3000/"
+let baseUrl = "http://101.201.152.125:3000/"
 export function request({url,method, data= {}}) {
 	return new Promise((resolve, reject)=> {
 		uni.request({
@@ -11,6 +11,8 @@ export function request({url,method, data= {}}) {
 			},
 			fail(e) {
 				reject("未知错误");
+				console.log(url)
+				console.log(data)
 			}
 		})
 	})

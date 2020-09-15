@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="zhuanlan-list" v-for="(item,index) in zhuanlanlist" :key="index" :style="{backgroundImage: 'url(' + item.zhuanlan_img + ')'}">
+		<view class="zhuanlan-list" v-for="(item,index) in zhuanlanlist" :key="index" :style="{backgroundImage: 'url(' + (item.zhuanlan_bg || item.zhuanlan_img) + ')'}">
 			<navigator :url="'/pages/zhuanlan_detail/zhuanlan_detail?zhuanlan_id='+ item.zhuanlan_id" open-type="navigate" hover-class="none"
 			 style="height: 100%;">
 				<view class="mask"></view>
@@ -41,7 +41,16 @@
 				"user_id": this.userId || -1
 			}).then(res => {
 				this.zhuanlanlist.push(...res.data)
-				this.removeRepeat()
+				this.removeRepeat();
+				
+			})
+		},
+		onPullDownRefresh() {
+			getZhuanlan({
+				"user_id": this.userId || -1
+			}).then(res => {
+				this.zhuanlanlist = res.data;
+				uni.stopPullDownRefresh()
 			})
 		},
 		data() {
@@ -75,7 +84,8 @@
 			width: 90%;
 			height: 20vh;
 			background-repeat: no-repeat;
-			background-size: 100% 100%;
+			background-size: cover;
+			background-position: center center;
 			border-radius: 1.5vh;
 			color: #FFFFFF;
 			position: relative;

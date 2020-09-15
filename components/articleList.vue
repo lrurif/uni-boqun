@@ -63,6 +63,7 @@
 		text-align: left;
 		border-bottom: 1px solid #ddd;
 		padding: 40rpx 15rpx;
+		position: relative;
 		.author {
 			padding: 5rpx 0 20rpx;
 			.avatar {
@@ -103,8 +104,8 @@
 			.introduce-right {
 				position: absolute;
 				right: 0;
-				top: 80rpx;
-				transform: translate(0,-50%);
+				top: 0;
+				// transform: translate(0,-50%);
 				.article-img {
 					width: 200rpx;
 					height: 150rpx;

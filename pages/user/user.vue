@@ -136,7 +136,6 @@
 			}
 		},
 		mounted() {
-			console.log(typeof this.InfoList.introduction)
 			if (this.userId != this.id) {
 				this.list = [{
 					cate_name: '文章'
@@ -148,7 +147,6 @@
 				this.current = index;
 			},
 			focus_person() {
-				console.log('123')
 				if (!isLogin()) return;
 				let that = this;
 				if (this.InfoList.isFocus) {
@@ -166,6 +164,7 @@
 										duration: 2000,
 										icon: "success"
 									});
+									this.InfoList.fansNum--;
 									that.InfoList.isFocus = !that.InfoList.isFocus;
 								})
 							}
@@ -183,6 +182,7 @@
 							duration: 2000,
 							icon: "success"
 						});
+						this.InfoList.fansNum++;
 						this.InfoList.isFocus = !this.InfoList.isFocus;
 					})
 				}
@@ -213,13 +213,13 @@
 		.user_info {
 			width: 90%;
 			height: 320rpx;
-			margin-top: 20rpx;
+			// margin-top: 20rpx;
+			padding-top: 20rpx;
 			display: flex;
 			justify-content: space-evenly;
 			flex-direction: column;
 			color: #FFFFFF;
 			z-index: 1;
-
 			.avatar {
 				display: flex;
 				align-items: center;
@@ -260,7 +260,7 @@
 		.article {
 			z-index: 1;
 			width: 100%;
-			height: 75%;
+			height: calc(100vh - 320rpx);
 			display: flex;
 			flex-direction: column;
 			align-items: center;

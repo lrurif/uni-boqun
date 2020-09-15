@@ -17,7 +17,7 @@
 				<u-cell-item icon="close" title="退出登录" @click="clearStorageSync"></u-cell-item>
 			</u-cell-group>
 		</view>
-		<u-button @click="login()" size="medium" :ripple="true" open-type="getUserInfo" withCredentials="true" type="success"
+		<u-button @click="login" size="medium" :ripple="true" open-type="getUserInfo" withCredentials="true" type="success"
 		 v-show="!isShow" class="login">
 			<u-icon name="weixin-circle-fill" size="40" style=""></u-icon>微信一键登录
 		</u-button>
@@ -31,13 +31,14 @@
 			return {
 				name: " ",
 				avatarUrl: "",
-				isShow: false
+				isShow: false,
+				userId: ""
 			}
 		},
 		computed: {
-			userId() {
-				return uni.getStorageSync("userId")
-			}
+			// userId() {
+			// 	return uni.getStorageSync("userId")
+			// }
 		},
 		methods: {
 			test() {
@@ -95,10 +96,8 @@
 															console.log('头像地址保存成功');
 														}
 													});
-													uni.setStorage({
-														key: "userId",
-														data: res.data.userId
-													})
+													uni.setStorageSync("userId", res.data.userId);
+													_this.userId = res.data.userId;
 												})
 											
 										}
@@ -110,13 +109,14 @@
 				})
 			},
 			clearStorageSync() {
-				wx.clearStorageSync
 				this.isShow = false
 				uni.clearStorageSync();
+				this.userId = "";
 				console.log("缓存清除成功")
 			}
 		},
 		onLoad() {
+			this.userId = uni.getStorageSync("userId");
 			var _this = this
 			uni.checkSession({
 				success() {

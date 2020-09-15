@@ -32,6 +32,7 @@
   text-align: left;
   border-bottom: 1px solid #ddd;
   padding: 40rpx 15rpx;
+  position: relative;
 }
 .article-list-content .author.data-v-4501f6c9 {
   padding: 5rpx 0 20rpx;
@@ -74,9 +75,7 @@
 .article-list-content .articel-introduce .introduce-right.data-v-4501f6c9 {
   position: absolute;
   right: 0;
-  top: 80rpx;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  top: 0;
 }
 .article-list-content .articel-introduce .introduce-right .article-img.data-v-4501f6c9 {
   width: 200rpx;

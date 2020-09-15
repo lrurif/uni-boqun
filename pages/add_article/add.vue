@@ -9,7 +9,7 @@
 				<img :src="cover_img" class="cover-img" v-else>
 			</view>
 			<!-- <editor placeholder="123"></editor> -->
-			<jinEdit ref="editor" :title="article_title" class="editor" placeholder="请输入内容" @editOk="editOk" uploadFileUrl="http://127.0.0.1:3000/upload/single" fileKeyName="imageFile"></jinEdit>
+			<jinEdit ref="editor" :title="article_title" class="editor" placeholder="请输入内容" @editOk="editOk" uploadFileUrl="http://101.201.152.125:3000/upload/single" fileKeyName="imageFile"></jinEdit>
 			<button type="primary" class="preview-btn" @click="preview">预览</button>
 		</view>
 		<u-toast ref="uToast" />
@@ -72,7 +72,7 @@
 						for (let temp of tempFilePaths) {
 							// 图片上传服务器
 							await uni.uploadFile({
-								url: 'http://127.0.0.1:3000/upload/single',
+								url: 'http://101.201.152.125:3000/upload/single',
 								filePath: temp,
 								name: "imageFile",
 								success: res => {

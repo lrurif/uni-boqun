@@ -146,6 +146,7 @@
 			selectArticle(index) {
 				this.chosenArticle = this.contributionList[index];
 				this.isChosen = true;
+				this.isLook = false;
 			},
 			searchDebounce: debounce(function() {
 			      getSubmitArticle({
@@ -275,7 +276,7 @@
 				width: 95%;
 				position: absolute;
 				left: 50%;
-				top: 35%;
+				top: 15%;
 				transform: translate(-50%, 0);
 				border-radius: 20rpx;
 				background: #fff;

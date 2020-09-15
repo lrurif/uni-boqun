@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uIcon: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 139))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 142))
   }
 }
 var render = function() {
@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -178,6 +178,15 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 44);function _toConsuma
     then(function (res) {var _this2$zhuanlanlist;
       (_this2$zhuanlanlist = _this2.zhuanlanlist).push.apply(_this2$zhuanlanlist, _toConsumableArray(res.data));
       _this2.removeRepeat();
+
+    });
+  },
+  onPullDownRefresh: function onPullDownRefresh() {var _this3 = this;
+    (0, _zhuanlan.getZhuanlan)({
+      "user_id": this.userId || -1 }).
+    then(function (res) {
+      _this3.zhuanlanlist = res.data;
+      uni.stopPullDownRefresh();
     });
   },
   data: function data() {
@@ -193,6 +202,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 44);function _toConsuma
         return cur;
       }, []);
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

@@ -94,19 +94,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uAvatar: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 153))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 156))
   },
   uButton: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 160))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 163))
   },
   uCellGroup: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-group/u-cell-group */ "node-modules/uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-group/u-cell-group.vue */ 167))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-group/u-cell-group */ "node-modules/uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-group/u-cell-group.vue */ 170))
   },
   uCellItem: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-item/u-cell-item */ "node-modules/uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-item/u-cell-item.vue */ 174))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-item/u-cell-item */ "node-modules/uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-item/u-cell-item.vue */ 177))
   },
   uIcon: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 139))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 142))
   }
 }
 var render = function() {
@@ -199,7 +199,10 @@ var _user = __webpack_require__(/*! ../../api/user.js */ 71); //
 //
 //
 //
-var _default = { data: function data() {return { name: " ", avatarUrl: "", isShow: false };}, computed: { userId: function userId() {return uni.getStorageSync("userId");} }, methods: { test: function test() {uni.switchTab({ url: '/pages/test/test' });}, // chooseAvatar() {
+var _default = { data: function data() {return { name: " ", avatarUrl: "", isShow: false, userId: "" };}, computed: {// userId() {
+    // 	return uni.getStorageSync("userId")
+    // }
+  }, methods: { test: function test() {uni.switchTab({ url: '/pages/test/test' });}, // chooseAvatar() {
     // 	// 此为uView的跳转方法，详见"文档-JS"部分，也可以用uni的uni.navigateTo
     // 	this.$u.route({
     // 		// 关于此路径，请见下方"注意事项"
@@ -215,9 +218,7 @@ var _default = { data: function data() {return { name: " ", avatarUrl: "", isSho
     // 		}
     // 	})
     // },
-    login: function login() {var _this = this;uni.getProvider({ service: 'oauth', success: function success(res) {if (~res.provider.indexOf('weixin')) {uni.login({
-              provider: 'weixin',
-              success: function success(loginRes) {
+    login: function login() {var _this = this;uni.getProvider({ service: 'oauth', success: function success(res) {if (~res.provider.indexOf('weixin')) {uni.login({ provider: 'weixin', success: function success(loginRes) {
                 uni.getUserInfo({
                   provider: 'weixin',
                   success: function success(infoRes) {
@@ -243,10 +244,8 @@ var _default = { data: function data() {return { name: " ", avatarUrl: "", isSho
                           console.log('头像地址保存成功');
                         } });
 
-                      uni.setStorage({
-                        key: "userId",
-                        data: res.data.userId });
-
+                      uni.setStorageSync("userId", res.data.userId);
+                      _this.userId = res.data.userId;
                     });
 
                   } });
@@ -258,13 +257,14 @@ var _default = { data: function data() {return { name: " ", avatarUrl: "", isSho
 
     },
     clearStorageSync: function clearStorageSync() {
-      wx.clearStorageSync;
       this.isShow = false;
       uni.clearStorageSync();
+      this.userId = "";
       console.log("缓存清除成功");
     } },
 
   onLoad: function onLoad() {
+    this.userId = uni.getStorageSync("userId");
     var _this = this;
     uni.checkSession({
       success: function success() {

@@ -1,9 +1,11 @@
 <template>
 	<view class="history-list">
-		<view class="history-item" v-for="(item, index) in historyList" :key="index" @click="">
-			<view class="history-title">{{item.article_title}}</view>
-			<view class="history-time">{{item.browsing_time}}</view>
-		</view>
+		<navigator class="history-item" v-for="(item, index) in historyList" :key="index" @click="" :url="'/pages/article_detail/detail?articleId='+ item.article_id" open-type="navigate" hover-class="none">
+			<!-- <navigator :url="'/pages/article_detail/detail?articleId='+ item.article_id" open-type="navigate" hover-class="none"> -->
+				<view class="history-title">{{item.article_title}}</view>
+				<view class="history-time">{{item.browsing_time}}</view>
+			<!-- </navigator> -->
+		</navigator>
 		<view v-show="!loading" style="height: 100rpx;line-height: 100rpx;text-align: center;"><text :decode="true">-&nbsp;</text><text class="iconfont icon-bottom-emoil"></text>我是有底线的&nbsp;-</view>
 	</view>
 </template>
