@@ -88,8 +88,8 @@
   margin-left: 1vw;
 }
 .content .zhuanlan-list.data-v-6394d026:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }

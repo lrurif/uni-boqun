@@ -70,7 +70,10 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+	.show-html {
+		font-size: 34rpx;
+	}
 	.article_preview {
 		padding: 30rpx 15rpx;
 		padding-bottom: 100rpx;

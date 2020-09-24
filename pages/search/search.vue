@@ -1,6 +1,6 @@
 <template>
 	<view class="search-content">
-		<u-search class="search-tool" shape="square" margin="30rpx 20rpx" v-model="keyword" @search = "search" @focus="isSearch = true" @custom = "search"></u-search>
+		<u-search class="search-tool" shape="square" margin="30rpx 20rpx" v-model="keyword" @search = "search(false)" @focus="isSearch = true" @custom = "search(false)"></u-search>
 		<view class="search-history" v-show="isSearch">
 			<view class="search-history-header">
 				<text class="header-title">历史记录</text>
@@ -12,13 +12,13 @@
 				</view>
 			</view>
 		</view>
-		<view v-show="!isSearch">
-			<u-tabs name="cate_name" :show-bar="false" :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
+		<view v-if="!isSearch">
+			<u-tabs name="cate_name"  :list="list" :is-scroll="false" :current="current" @change="change"></u-tabs>
 			<view style="background-color: #fff;" v-show="current === 0">
 				<article-list :articleList="articleList"></article-list>
 			</view>
 			<view v-show="current === 1" class="user-list">
-				<view v-for="(item, index) in userList" :key="index" class="user-item">
+					<navigator :url="'/pages/user/user?id='+ item.id" open-type="navigate" hover-class="none" v-for="(item, index) in userList" :key="index" class="user-item">
 						<image :src="item.avatar || '../../static/images/home.png'" class="avatar"></image>
 						<view class="user-info">
 							<view class="user-name">{{item.realName}}</view>
@@ -31,9 +31,10 @@
 								<text>{{item.focusNum}}</text>
 							</view>
 						</view>
-				</view>
+					</navigator>
 			</view>
 		</view>
+		<u-toast ref="uToast" />
 	</view>
 </template>
 
@@ -71,8 +72,14 @@
 			},
 		},
 		methods: {
-			search(word) {
-				if(this.keyword.trim() === "" && !word) return;
+			search(word = "") {
+				if(this.keyword.trim() === "" && !word) {
+					this.$refs.uToast.show({
+						title: '查询内容不能为空！',
+						type: 'warning',
+					})
+					return;
+				}
 				if(word) this.keyword = word;
 				getArticle({
 					search_word: this.keyword,

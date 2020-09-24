@@ -4,21 +4,21 @@
 			<h1 class="article_title">{{article_detail.article_title}}</h1>
 			<view class="author">
 				<navigator :url="'/pages/user/user?id='+ article_detail.user_id" open-type="navigate" hover-class="none">
-					<img class="author-avatar" :src="article_detail.avatar">
-					<text class="author-name">{{article_detail.realName}}</text>
+					<img class="author-avatar" :src="article_detail.avatar || '../../pages/static/images/avatar.png'">
+					<text class="author-name">{{article_detail.realName || ""}}</text>
 				</navigator>
 				<text v-if="userId!==article_detail.user_id" @tap="focus_person" class="focus-author" :class="{'isFocus': article_detail.isFocus}">{{article_detail.isFocus?"已关注":"关注"}}</text>
 			</view>
 			<view class="article-info">
-				<text class="article-time">{{article_detail.article_time}}</text>
+				<text class="article-time">{{article_detail.article_time || ""}}</text>
 				<text class="middle-code">·</text>
-				<text class="article-read-num">阅读:{{article_detail.article_reading}}</text>
+				<text class="article-read-num">阅读:{{article_detail.article_reading || 0}}</text>
 			</view>
 			<view style="height: 20rpx;background-color: #f7f5f5;margin-bottom: 20rpx;width: 100vw;margin-left: -15rpx;"></view>
 			 <rich-text class="show-html" :nodes="article_detail.article_content"></rich-text>
 			 <u-popup v-model="pop_show" mode="top">
 				 <view class="pop-content">
-					<textarea v-model="comment_value" :placeholder="placeholder" class="comment-input" :focus="true">
+					<textarea v-model="comment_value" :placeholder="placeholder" class="comment-input">
 					</textarea>
 					<view class="comment-btn">
 						<button class="cancel" @tap="pop_show = false;">取消</button>
@@ -30,7 +30,7 @@
 		<view class="comments-area">
 			<view class="comment" v-for="(item, index) in comments_arr" :key="index">
 				<view class="sender">
-					<navigator url="/pages/user/user" open-type="navigate" hover-class="none">
+					<navigator :url="'/pages/user/user?id='+ item.user_id" open-type="navigate" hover-class="none">
 						<view class="sender-left">
 							<image class="avatar" :src="item.sender.avatar"></image>
 							<text class="real-name">{{item.sender.realName}}</text>
@@ -49,7 +49,7 @@
 					<view class="comment-child" v-for="(child_item, child_index) in item.children" :key="child_index">
 						<view class="sender-child">
 							<view class="sender-left-child">
-								<navigator style="display: inline-block;" url="/pages/user/user" open-type="navigate" hover-class="none">
+								<navigator style="display: inline-block;":url="'/pages/user/user?id='+ child_item.sender.id" open-type="navigate" hover-class="none">
 									<image class="avatar" :src="child_item.sender.avatar"></image>
 									<text class="real-name">{{child_item.sender.realName}}</text>
 								</navigator>
@@ -164,7 +164,7 @@
 				receive_person_id: "",
 				reply_comment_id: "",
 				reply_index: 0,
-				canPublish: true
+				canPublish: true,
 			}
 		},
 		methods: {
@@ -385,6 +385,9 @@
 </script>
 
 <style lang="scss" scoped>
+	.show-html {
+		font-size: 34rpx;
+	}
 	.detail-main {
 		background: #f7f5f5;
 		margin-bottom: 100rpx;
@@ -484,7 +487,7 @@
 						margin-left: 20rpx;
 						font-size: 28rpx;
 						color: #333;
-						font-weight: 600;
+						font-weight: bold;
 					}
 				}
 				.sender-right {
@@ -500,7 +503,7 @@
 			}
 			.comment-content {
 				margin-left: 70rpx;
-				font-size: 35rpx;
+				font-size: 30rpx;
 				.comment-data {
 					color: #777;
 					margin-left: 20rpx;
@@ -528,7 +531,7 @@
 							margin-left: 20rpx;
 							font-size: 24rpx;
 							color: #333;
-							font-weight: 600;
+							font-weight: bold;
 							margin-right: 10rpx;
 						}
 						.receive-name {
@@ -550,7 +553,7 @@
 					}
 					.comment-content-child {
 						margin-left: 70rpx;
-						font-size: 35rpx;
+						font-size: 30rpx;
 						.comment-data-child {
 							color: #777;
 							margin-left: 20rpx;

@@ -38,14 +38,14 @@
   padding: 5rpx 0 20rpx;
 }
 .article-list-content .author .avatar.data-v-4501f6c9 {
-  width: 40rpx;
-  height: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
   border-radius: 50%;
   vertical-align: middle;
 }
 .article-list-content .author .author-name.data-v-4501f6c9 {
   color: #333333;
-  margin-left: 10rpx;
+  margin-left: 20rpx;
   font-size: 26rpx;
 }
 .article-list-content .articel-introduce.data-v-4501f6c9 {

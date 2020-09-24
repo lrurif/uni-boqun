@@ -5,6 +5,7 @@
 			<view class="cover" @click="choseImg">
 				<view class="cover-btn" v-if="!cover_img" >
 					<u-icon name = "plus"></u-icon>
+					<view class="add-cover">添加封面</view>
 				</view>
 				<img :src="cover_img" class="cover-img" v-else>
 			</view>
@@ -167,7 +168,11 @@
 				height: 150rpx;
 				border: 1px solid #ddd;
 				color: #ddd;
-				line-height: 150rpx;
+				// line-height: 150rpx;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;
 				position: absolute;
 				left: 0;
 				top: 0;
@@ -178,6 +183,9 @@
 				position: absolute;
 				left: 0;
 				top: 0;
+			}
+			.add-cover {
+				font-size: 28rpx;
 			}
 				
 		}

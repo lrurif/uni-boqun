@@ -89,7 +89,6 @@
 			border-radius: 1.5vh;
 			color: #FFFFFF;
 			position: relative;
-
 			.mask {
 				position: absolute;
 				border-radius: 1.5vh;
@@ -127,7 +126,7 @@
 		}
 
 		.zhuanlan-list:active {
-			transform: scale(0.9);
+			transform: scale(0.98);
 			transition-duration: 0.3s;
 		}
 	}

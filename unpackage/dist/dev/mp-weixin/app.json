@@ -36,7 +36,7 @@
         "pagePath": "pages/zhuanlan/zhuanlan",
         "iconPath": "static/images/zhuanlan.png",
         "selectedIconPath": "static/images/zhuanlan_active.png",
-        "text": "专题"
+        "text": "专栏"
       },
       {
         "color": "#ddd",
@@ -55,5 +55,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap89.json"
+  "sitemapLocation": "sitemap86.json"
 }

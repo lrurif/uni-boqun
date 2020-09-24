@@ -5,6 +5,7 @@
   "usingComponents": {
     "u-search": "/node-modules/uview-ui/components/u-search/u-search",
     "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
     "article-list": "/components/articleList"
   }
 }

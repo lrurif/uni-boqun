@@ -96,14 +96,14 @@ var components = {
   uAvatar: function() {
     return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 156))
   },
-  uButton: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 163))
-  },
   uCellGroup: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-group/u-cell-group */ "node-modules/uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-group/u-cell-group.vue */ 170))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-group/u-cell-group */ "node-modules/uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-group/u-cell-group.vue */ 163))
   },
   uCellItem: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-item/u-cell-item */ "node-modules/uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-item/u-cell-item.vue */ 177))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-item/u-cell-item */ "node-modules/uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-item/u-cell-item.vue */ 170))
+  },
+  uButton: function() {
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 177))
   },
   uIcon: function() {
     return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 142))
@@ -172,9 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var _user = __webpack_require__(/*! ../../api/user.js */ 71); //
-//
 //
 //
 //
@@ -218,7 +216,8 @@ var _default = { data: function data() {return { name: " ", avatarUrl: "", isSho
     // 		}
     // 	})
     // },
-    login: function login() {var _this = this;uni.getProvider({ service: 'oauth', success: function success(res) {if (~res.provider.indexOf('weixin')) {uni.login({ provider: 'weixin', success: function success(loginRes) {
+    login: function login() {var _this = this;uni.getProvider({ service: 'oauth', success: function success(res) {if (~res.provider.indexOf('weixin')) {uni.login({ provider: 'weixin',
+              success: function success(loginRes) {
                 uni.getUserInfo({
                   provider: 'weixin',
                   success: function success(infoRes) {
@@ -264,17 +263,15 @@ var _default = { data: function data() {return { name: " ", avatarUrl: "", isSho
     } },
 
   onLoad: function onLoad() {
-    this.userId = uni.getStorageSync("userId");
+
     var _this = this;
     uni.checkSession({
       success: function success() {
-        _this.isShow = true;
         console.log("存在缓存!");
         uni.getStorage({
           key: 'userName',
           success: function success(res) {
             _this.name = res.data;
-            console.log(res.data);
           },
           fail: function fail() {
             _this.isShow = false;
@@ -296,7 +293,8 @@ var _default = { data: function data() {return { name: " ", avatarUrl: "", isSho
 
   },
   created: function created() {
-
+    this.userId = uni.getStorageSync("userId");
+    this.userId ? this.isShow = true : "";
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

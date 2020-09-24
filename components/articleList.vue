@@ -3,7 +3,7 @@
 				<view v-for="(item, index) in articleList" :key="index" class="article-list-content">
 					<navigator v-if="author_show" :url="'/pages/user/user?id='+ item.user_id" open-type="navigate" hover-class="none">
 						<view class="author">
-							<img :src="item.avatar" class="avatar">
+							<img :src="item.avatar || '../../static/images/avatar.png'" class="avatar">
 							<text class="author-name">{{item.realName}}</text>
 						</view>
 					</navigator>
@@ -67,14 +67,14 @@
 		.author {
 			padding: 5rpx 0 20rpx;
 			.avatar {
-				width: 40rpx;
-				height: 40rpx;
+				width: 50rpx;
+				height: 50rpx;
 				border-radius: 50%;
 				vertical-align: middle;
 			}
 			.author-name {
 				color: #333333;
-				margin-left: 10rpx;
+				margin-left: 20rpx;
 				font-size: 26rpx;
 			}
 		}

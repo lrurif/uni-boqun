@@ -264,12 +264,9 @@ var _focus = __webpack_require__(/*! @/api/focus.js */ 62); //
 //
 //
 //
-var articleList = function articleList() {__webpack_require__.e(/*! require.ensure | components/articleList */ "components/articleList").then((function () {return resolve(__webpack_require__(/*! @/components/articleList.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { onLoad: function onLoad(option) {var _this = this;this.id = option.id;if (option.index) {this.current = option.index;}(0, _user.getUserInfoById)({ "userId": option.id, "id": this.userId || -1 }).then(function (res) {_this.InfoList = res.data;if (_this.InfoList.introduction == null || _this.InfoList.introduction === "null") {_this.InfoList.introduction = "该用户还没有简介";}}), (0, _article.getArticle)({ "page": 1, "author_id": option.id, "id": this.userId || -1 }).then(function (res) {_this.articleList = res.data.data;});if (option.id == this.userId) {(0, _collect.getCollectArticle)({ "page": 1, "userId": option.id }).then(function (res) {console.log(res.data.data);_this.collectList = res.data.data;});}uni.getSystemInfo({ success: function success(res) {// this.screenHeight = res.screenHeight
+var articleList = function articleList() {__webpack_require__.e(/*! require.ensure | components/articleList */ "components/articleList").then((function () {return resolve(__webpack_require__(/*! @/components/articleList.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { onLoad: function onLoad(option) {var _this = this;this.id = option.id;if (option.index) {this.current = option.index;}(0, _user.getUserInfoById)({ "userId": option.id, "id": this.userId || -1 }).then(function (res) {_this.InfoList = res.data;if (_this.InfoList.introduction == null || _this.InfoList.introduction === "null") {_this.InfoList.introduction = "该用户还没有简介";}}), (0, _article.getArticle)({ "page": 1, "author_id": option.id, "id": this.userId || -1 }).then(function (res) {_this.articleList = res.data.data;});if (option.id == this.userId) {(0, _collect.getCollectArticle)({ "page": 1, "userId": option.id }).then(function (res) {_this.collectList = res.data.data;});}uni.getSystemInfo({ success: function success(res) {// this.screenHeight = res.screenHeight
         // this.windowWidth = res.windowWidth
-        console.log(res.screenHeight);console.log(res.windowHeight);} });}, components: { articleList: articleList }, data: function data() {return { id: null, InfoList: [], isFocus: true, articleList: [], collectList: [], list: [{ cate_name: '文章' }, { cate_name: '收藏' }],
-
-      current: 0,
-      windowHeight: 603 };
+      } });}, components: { articleList: articleList }, data: function data() {return { id: null, InfoList: [], isFocus: true, articleList: [], collectList: [], list: [{ cate_name: '文章' }, { cate_name: '收藏' }], current: 0, windowHeight: 603 };
 
   },
   computed: {

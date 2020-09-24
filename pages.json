@@ -64,9 +64,7 @@
 		{
 			"path": "pages/history/history",
 			"style": {
-				"navigationBarTitleText": "浏览历史",
-				"enablePullDownRefresh": true,
-				"onReachBottomDistance": 50
+				"navigationBarTitleText": "阅读记录"
 			}
 		},
 		{
@@ -93,7 +91,7 @@
 			"pagePath": "pages/zhuanlan/zhuanlan",
 			"iconPath": "static/images/zhuanlan.png",
 			"selectedIconPath": "static/images/zhuanlan_active.png",
-			"text": "专题"
+			"text": "专栏"
 		}, {
 			"color": "#ddd",
 			"pagePath": "pages/subscribe/subscribe",

@@ -2,8 +2,7 @@
 	<view class="content">
 		<view class="avatar" v-if="isShow">
 			<u-avatar :src="avatarUrl" size="large"></u-avatar>
-			<p>{{name}}</p>
-			<u-button @tap="chooseAvatar()">选择头像</u-button>
+			<p class="user-name">{{name}}</p>
 		</view>
 		<view class="list" v-show="isShow">
 			<u-cell-group>
@@ -116,17 +115,15 @@
 			}
 		},
 		onLoad() {
-			this.userId = uni.getStorageSync("userId");
+			
 			var _this = this
 			uni.checkSession({
 				success() {
-					_this.isShow = true
 					console.log("存在缓存!");
 					uni.getStorage({
 						key: 'userName',
 						success: function(res) {
 							_this.name = res.data
-							console.log(res.data);
 						},
 						fail: function() {
 							_this.isShow = false
@@ -148,7 +145,8 @@
 			})
 		},
 		created() {
-
+			this.userId = uni.getStorageSync("userId");
+			this.userId?this.isShow = true:"";
 		}
 	}
 </script>
@@ -160,7 +158,7 @@
 
 		.avatar {
 			width: 100vw;
-			height: 30vh;
+			height: 24vh;
 			margin-top: 10vh;
 			display: flex;
 			align-items: center;
@@ -173,10 +171,14 @@
 				border-radius: 50%;
 				background-color: #C0C0C0;
 			}
+			.user-name {
+				font-weight: bold;
+				font-size: 42rpx;
+			}
 		}
 
 		.list {
-			margin-top: 5vh;
+			margin-top: 15vh;
 			width: 100vw;
 			height: 40vh;
 		}

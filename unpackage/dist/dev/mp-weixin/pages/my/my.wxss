@@ -31,7 +31,7 @@
 }
 .content .avatar.data-v-0be17cc6 {
   width: 100vw;
-  height: 30vh;
+  height: 24vh;
   margin-top: 10vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -52,8 +52,12 @@
   border-radius: 50%;
   background-color: #C0C0C0;
 }
+.content .avatar .user-name.data-v-0be17cc6 {
+  font-weight: bold;
+  font-size: 42rpx;
+}
 .content .list.data-v-0be17cc6 {
-  margin-top: 5vh;
+  margin-top: 15vh;
   width: 100vw;
   height: 40vh;
 }

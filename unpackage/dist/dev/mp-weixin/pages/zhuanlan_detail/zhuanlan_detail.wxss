@@ -112,6 +112,7 @@
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 1000;
 }
 .content .popup .mask.data-v-8509cd44 {
   width: 100vw;
@@ -122,11 +123,10 @@
   width: 95%;
   position: absolute;
   left: 50%;
-  top: 15%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
   border-radius: 20rpx;
   background: #fff;
+  -webkit-transition: top .3s;
+  transition: top .3s;
 }
 .content .popup .popup-content .content-header.data-v-8509cd44 {
   text-align: center;

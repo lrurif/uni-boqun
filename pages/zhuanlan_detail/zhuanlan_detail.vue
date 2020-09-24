@@ -5,19 +5,19 @@
 				<view class="zhuanlan-information-header">
 					<image :src="zhuanlanDetail.zhuanlan.zhuanlan_img" class="avatar"></image>
 					<view class="title">
-						<view class="zhuanlan-name">{{zhuanlanDetail.zhuanlan.zhuanlan_name}}</view>
-						<view class="zhuanlan-article-num">{{zhuanlanDetail.article_num}}篇文章</view>
+						<view class="zhuanlan-name">{{zhuanlanDetail.zhuanlan.zhuanlan_name || ""}}</view>
+						<view class="zhuanlan-article-num">{{zhuanlanDetail.article_num || 0}}篇文章</view>
 					</view>
 				</view>
 				
 				<view class="zhuanlan-abstract">
-					<view>{{zhuanlanDetail.zhuanlan.zhuanlan_abstract}}</view>
+					<view>{{zhuanlanDetail.zhuanlan.zhuanlan_abstract || ""}}</view>
 				</view>
 				<view class="zhuanlan-btn">
-					<view @click="focus_zhuanlan" class="zhuanlan-focus" :class="{'isFocus': zhuanlanDetail.isFocus}">
+					<view @click="focus_zhuanlan" class="zhuanlan-focus" :class="{'isFocus': zhuanlanDetail.isFocus || 0}">
 						<text v-if="zhuanlanDetail.isFocus"><text class="iconfont icon-yes"></text>已关注</text>
 						<text v-else><text class="iconfont icon-add"></text>关注</text>
-						<text class="split">|</text>{{zhuanlanDetail.focus_num}}
+						<text class="split">|</text>{{zhuanlanDetail.focus_num || 0}}
 					</view>
 					<view class="zhuanlan-publish" @click="showPopup">投稿</view>
 				</view>
@@ -29,7 +29,7 @@
 		<view class="popup" v-show="showModal">
 			<view class="mask">
 			</view>
-			<view class="popup-content">
+			<view class="popup-content" :style="{'top':isLook?'150rpx':'50%','transform': isLook?'translate(-50%,0)':'translate(-50%,-50%)'}">
 				<view class="content-header">
 					<text class="header-title" >投稿文章</text>
 				</view>
@@ -267,6 +267,7 @@
 			position: fixed;
 			left: 0;
 			top: 0;
+			z-index: 1000;
 			.mask {
 				width: 100vw;
 				height: 100vh;
@@ -276,10 +277,11 @@
 				width: 95%;
 				position: absolute;
 				left: 50%;
-				top: 15%;
-				transform: translate(-50%, 0);
+				// top: 50rpx;
+				// transform: translate(-50%, -50%);
 				border-radius: 20rpx;
 				background: #fff;
+				transition: top .3s;
 				.content-header {
 					text-align: center;
 					border-bottom: 1px solid #ddd;

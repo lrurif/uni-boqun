@@ -24,6 +24,9 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.show-html.data-v-4025a69d {
+  font-size: 34rpx;
+}
 .detail-main.data-v-4025a69d {
   background: #f7f5f5;
   margin-bottom: 100rpx;
@@ -124,7 +127,7 @@
   margin-left: 20rpx;
   font-size: 28rpx;
   color: #333;
-  font-weight: 600;
+  font-weight: bold;
 }
 .comments-area .comment .sender .sender-right.data-v-4025a69d {
   color: #ddd;
@@ -138,7 +141,7 @@
 }
 .comments-area .comment .comment-content.data-v-4025a69d {
   margin-left: 70rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 .comments-area .comment .comment-content .comment-data.data-v-4025a69d {
   color: #777;
@@ -173,7 +176,7 @@
   margin-left: 20rpx;
   font-size: 24rpx;
   color: #333;
-  font-weight: 600;
+  font-weight: bold;
   margin-right: 10rpx;
 }
 .comments-area .comment .comments-children .comment-child .sender-child .receive-name.data-v-4025a69d {
@@ -194,7 +197,7 @@
 }
 .comments-area .comment .comments-children .comment-child .comment-content-child.data-v-4025a69d {
   margin-left: 70rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 .comments-area .comment .comments-children .comment-child .comment-content-child .comment-data-child.data-v-4025a69d {
   color: #777;

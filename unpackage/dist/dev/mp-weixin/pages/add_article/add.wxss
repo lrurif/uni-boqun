@@ -47,7 +47,19 @@
   height: 150rpx;
   border: 1px solid #ddd;
   color: #ddd;
-  line-height: 150rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
   position: absolute;
   left: 0;
   top: 0;
@@ -58,6 +70,9 @@
   position: absolute;
   left: 0;
   top: 0;
+}
+.add-article .cover .add-cover {
+  font-size: 28rpx;
 }
 .add-article .preview-btn {
   margin-bottom: 190rpx;

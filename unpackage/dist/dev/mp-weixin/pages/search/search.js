@@ -98,6 +98,9 @@ var components = {
   },
   uTabs: function() {
     return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 184))
+  },
+  uToast: function() {
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-toast/u-toast */ "node-modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! uview-ui/components/u-toast/u-toast.vue */ 205))
   }
 }
 var render = function() {
@@ -182,6 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _article = __webpack_require__(/*! @/api/article.js */ 43);
 
 var _user = __webpack_require__(/*! @/api/user.js */ 71); //
@@ -223,7 +227,13 @@ var _user = __webpack_require__(/*! @/api/user.js */ 71); //
 //
 //
 //
-var articleList = function articleList() {__webpack_require__.e(/*! require.ensure | components/articleList */ "components/articleList").then((function () {return resolve(__webpack_require__(/*! @/components/articleList.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { onLoad: function onLoad() {if (!Array.isArray(uni.getStorageSync('history'))) uni.setStorageSync('history', []);this.historyList = uni.getStorageSync('history');}, components: { articleList: articleList }, data: function data() {return { keyword: "", historyList: ["LOL", "CSGO", "CFHD", "学习软件", "家常菜", "家常菜大全"], page: 1, isSearch: true, list: [{ cate_name: '文章' }, { cate_name: '用户' }], current: 0, articleList: [], userList: [] };}, computed: { userId: function userId() {return uni.getStorageSync("userId");} }, methods: { search: function search(word) {var _this = this;if (this.keyword.trim() === "" && !word) return;if (word) this.keyword = word;(0, _article.getArticle)({ search_word: this.keyword, page: this.page, id: this.userId || -1 }).then(function (res) {_this.addHistory(_this.keyword);
+//
+var articleList = function articleList() {__webpack_require__.e(/*! require.ensure | components/articleList */ "components/articleList").then((function () {return resolve(__webpack_require__(/*! @/components/articleList.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { onLoad: function onLoad() {if (!Array.isArray(uni.getStorageSync('history'))) uni.setStorageSync('history', []);this.historyList = uni.getStorageSync('history');}, components: { articleList: articleList }, data: function data() {return { keyword: "", historyList: ["LOL", "CSGO", "CFHD", "学习软件", "家常菜", "家常菜大全"], page: 1, isSearch: true, list: [{ cate_name: '文章' }, { cate_name: '用户' }], current: 0, articleList: [], userList: [] };}, computed: { userId: function userId() {return uni.getStorageSync("userId");} }, methods: { search: function search() {var _this = this;var word = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";if (this.keyword.trim() === "" && !word) {this.$refs.uToast.show({ title: '查询内容不能为空！', type: 'warning' });return;}if (word) this.keyword = word;(0, _article.getArticle)({
+        search_word: this.keyword,
+        page: this.page,
+        id: this.userId || -1 }).
+      then(function (res) {
+        _this.addHistory(_this.keyword);
         _this.isSearch = false;
         _this.articleList = res.data.data;
       });

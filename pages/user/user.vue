@@ -5,24 +5,24 @@
 			<view class="avatar">
 				<u-avatar :src="InfoList.avatar" size="large"></u-avatar>
 				<view class="" style="font-size: 48rpx;margin-left: 5vw;">
-					{{InfoList.userName}}
+					{{InfoList.userName || ""}}
 				</view>
 			</view>
 			<view class="introduction" style="font-size: 24rpx;">
-				{{InfoList.introduction}}
+				{{InfoList.introduction || "该用户还没有简介"}}
 			</view>
 			<view class="user_status">
 				<view class="user_data">
 					<view class="kpi">
-						{{InfoList.focusNum}}
+						{{InfoList.focusNum || 0}}
 						<p>关注</p>
 					</view>
 					<view class="kpi">
-						{{InfoList.fansNum}}
+						{{InfoList.fansNum || 0}}
 						<p>粉丝</p>
 					</view>
 					<view class="kpi">
-						{{InfoList.articleNum}}
+						{{InfoList.articleNum || 0}}
 						<p>文章数</p>
 					</view>
 				</view>
@@ -97,7 +97,6 @@
 					"page": 1,
 					"userId": option.id,
 				}).then(res => {
-					console.log(res.data.data)
 					this.collectList = res.data.data;
 				})
 			}
@@ -105,8 +104,6 @@
 			    success: res=> {
 					// this.screenHeight = res.screenHeight
 					// this.windowWidth = res.windowWidth
-			        console.log(res.screenHeight);
-			        console.log(res.windowHeight);
 			    }
 			});
 
